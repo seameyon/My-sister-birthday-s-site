@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>💗</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Confetti (canvas-confetti) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.9.3/confetti.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <!-- Background: keep your same bg image, but make it pastel-pink -->
+  <div class="bg" aria-hidden="true"></div>
+
+  <!-- Soft floating pastel blobs overlay -->
+  <div class="overlay-blobs" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+
+  <!-- Background music (starts after user interacts) -->
+<audio id="bgm" src="./music/cotcc.mp3" preload="auto" loop></audio>
+
+
+  <!-- Music toggle -->
+  <button id="musicToggle" class="music-toggle" aria-label="Toggle music">🔊</button>
+
+  <main class="app">
+    <!-- SCREEN 1: Cake -->
+    <section id="screen-cake" class="screen is-active">
+      <h1 class="title">°࿔*`ЧЕСТИТ РОЖДЕН ДЕН, АНИ!･°</h1>
+      <p class="subtitle">Цъкни тортата…⋆.˚</p>
+
+      <button id="cakeBtn" class="cake" aria-label="Open the surprise">
+        <div class="plate"></div>
+
+        <div class="cake-body">
+          <div class="icing"></div>
+          <div class="drip d1"></div>
+          <div class="drip d2"></div>
+          <div class="drip d3"></div>
+        </div>
+
+        <div class="candles">
+          <div class="candle"><span class="flame"></span></div>
+          <div class="candle"><span class="flame"></span></div>
+          <div class="candle"><span class="flame"></span></div>
+        </div>
+      </button>
+
+      <p class="tiny">направено с любов ‪‪❤︎‬</p>
+    </section>
+
+    <!-- SCREEN 2: Mini game -->
+    <section id="screen-game" class="screen">
+      <h2 class="title">⋆⭒˚.⋆Събери малко наши спомени!⭒˚.⋆</h2>
+      <p class="subtitle">Натисни бутончето да разкриеш интересни моменти от живота ни!</p>
+
+      <div class="game">
+        <button id="popBtn" class="popper" aria-label="Pop a memory">
+          <span class="popper-icon">ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧ </span>
+          <span class="popper-text">пльок</span>
+        </button>
+
+        <div id="progress" class="progress" aria-live="polite">0 / 0</div>
+
+        <div id="photoWall" class="photo-wall" aria-label="Photos popping in"></div>
+
+        <button id="toNoteBtn" class="primary" disabled>следващо →</button>
+      </div>
+    </section>
+
+    <!-- SCREEN 3: Note -->
+    <section id="screen-note" class="screen">
+      <h2 class="title">Малка бележчица 💌</h2>
+
+      <div id="noteCard" class="note note-clickable" role="button" tabindex="0" aria-label="Tap to continue the note">
+        <div id="noteText"></div>
+        <div id="noteHint" class="note-hint">цъкни за да продължиш →</div>
+      </div>
+
+      <button id="replayBtn" class="secondary">Да се върнем в началото?</button>
+    </section>
+  </main>
+</body>
+</html>
